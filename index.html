@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What AI model can your PC run? — DreamServer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Three.js background canvas -->
+  <canvas id="three-canvas"></canvas>
+
+  <!-- Confetti canvas (shown on result) -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="wrap">
+
+    <header>
+      <div class="ds-pill" id="pill">
+        <span class="dot"></span>DreamServer · Hardware Finder
+      </div>
+      <h1 id="h1-target"></h1>
+      <p class="subtitle" id="sub">
+        Answer 4 quick questions. Get your exact hardware tier, recommended AI model,
+        and install command — all in under a minute.
+      </p>
+    </header>
+
+    <!-- Progress bar -->
+    <div class="prog-wrap" id="prog-wrap">
+      <div class="prog-meta">
+        <span id="prog-label">Question 1 of 4</span>
+        <span id="prog-pct">0%</span>
+      </div>
+      <div class="prog-track">
+        <div class="prog-fill" id="prog-fill" style="width:0%"></div>
+      </div>
+    </div>
+
+    <!-- Step dots -->
+    <div class="sdots" id="sdots">
+      <div class="sdot active" id="dot-0"></div>
+      <div class="sdot"        id="dot-1"></div>
+      <div class="sdot"        id="dot-2"></div>
+      <div class="sdot"        id="dot-3"></div>
+    </div>
+
+    <!-- Quiz is rendered here by quiz.js -->
+    <div id="quiz-root"></div>
+
+    <footer>
+      Built with curiosity for the
+      <a href="https://github.com/Light-Heart-Labs/DreamServer" target="_blank">DreamServer</a> community
+      &nbsp;·&nbsp;
+      <a href="https://discord.gg/qGVygYada3" target="_blank">Discord</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.reddit.com/r/DreamServer/" target="_blank">Reddit</a>
+    </footer>
+
+  </div><!-- /.wrap -->
+
+  <!-- Third-party libraries (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+  <!-- App scripts — order matters: data → utilities → quiz engine → background/fx -->
+  <script src="js/quiz-data.js"></script>
+  <script src="js/typewriter.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/background.js"></script>
+
+</body>
+</html>
